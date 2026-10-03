@@ -1,0 +1,182 @@
+/*
+    Basics of Web Development
+    Saara Saarnisto
+*/
+
+:root {
+  --primary: #d8899b; /* Soft rose */
+  --light: #fffaf7;   /* Warm cream */
+  --dark: #2d2528;    /* Charcoal */
+  --blue: #8ca6b8;    /* Calm blue-gray */
+  --green: #8fa58a;   /* Sage */
+  --orange: #d99a6c;  /* Ginger cat */
+  --rose: #b86f7b;    /* Dusty rose */
+  --pic-size: 300px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E3DFDA;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  border-bottom: 1px solid #e5e5e5;
+  background-color: var(--green);
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+nav {
+  min-height: 72px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--dark);
+  margin-right: 1rem;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-self: flex-end;
+}
+
+nav a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  min-height: 300px;
+  width: 100%;
+  background-image: url(images/cat_peeking.png);
+  background-size: cover;
+  background-position: center center;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  background-color: var(--primary);
+  color: var(--light);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: var(--rose);
+}
+
+.cats {
+  padding: 2rem 0;
+  background-color: #f7f7f7;
+}
+
+.cats h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 8px;
+  background-color: var(--light);
+  border: 4px dashed var(--green);
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.cat {
+  display: flex;
+}
+
+.cat .pic {
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: var(--pic-size);
+  margin-right: 1rem;
+}
+
+.cat .pic img {
+  max-width: var(--pic-size);
+}
+
+.cat .content {
+  flex: 1;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+@media (max-width: 700px) {
+  nav ul {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+}
