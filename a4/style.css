@@ -202,6 +202,24 @@ footer {
   margin-top: 8px;
 }
 
+@media (max-width: 1200px) {
+  .cat {
+    flex-direction: column;
+  }
+  .cat .content {
+    margin-top: 1rem;
+  }
+
+  .cat .pic {
+    margin-right: 0;
+    max-height: 100%;
+  }
+  
+  .cat .pic img {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 700px) {
   .cards {
     grid-template-columns: 1fr;
@@ -214,6 +232,8 @@ footer {
   .hero {
     min-height: 60vh;
   }
+
+  
 }
 
 @media (max-width: 400px) {
