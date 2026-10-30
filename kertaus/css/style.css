@@ -1,0 +1,158 @@
+/* Perustyyli */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(79, 149, 79);
+    background-color: rgb(76, 125, 101);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+main {
+    flex: 1;
+}
+
+.rajaus {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /*keskittää sisällön sivulle, tosi tärkeä!*/
+
+}
+
+a {
+  color: green;
+}
+
+.header {
+  padding: 16px 0;
+  background-color: white;
+
+}
+
+.header-sisalto {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.paavalikko {
+  display: flex;
+  gap: 20px;
+}
+
+.paavalikko a {
+  padding: 8px 8;
+  text-decoration: none;
+}
+
+/*hero osuus alkaa tästä */
+
+.hero {
+  padding: 80px 0;
+  color: white;
+  background-color: rgb(79, 149, 79);
+  background-image:linear-gradient(90deg, #000c, #0000), url("../images/mountainmaisema.webp");
+  background-size: cover;
+  background-position: center 70%;
+}
+
+.header-sisalto p {
+  max-width: 300px;
+}
+
+.paalinkki {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: rgb(19, 54, 37);
+  border-radius: 6px;
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+}
+
+.retket {
+  padding: 31px 0;
+
+}
+
+.retket h2 {
+  color: rgb(7, 3, 3);
+}
+
+.kortit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kortti {
+  padding: 24px;
+  background-color: white;
+  border: 1px solid rgb(52, 34, 27);
+  border-radius: 6px;
+}
+
+.tiedot li::marker {
+  color: rgb(28, 112, 75);
+}
+
+/*hampurilaisvalikko*/
+
+.valikko-checkbox, .hampurilainen {
+  display: none;
+
+}
+
+/*mobiilinäkymä*/
+
+@media(max-width:600px) {
+
+  .kortit {
+    grid-template-columns: 1fr;
+  }
+
+  .valikko-checkbox{
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+
+  }
+  .hampurilainen {
+    display: block;
+    margin-left: auto;
+    padding: 4px 10px;
+    border: 2px solid rgb(52, 34, 27);
+    border-radius: 6px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .paavalikko {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .valikko-checkbox:checked ~.paavalikko {
+    display: flex;
+
+  }
+}
